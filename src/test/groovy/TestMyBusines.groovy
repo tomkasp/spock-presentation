@@ -1,32 +1,44 @@
 import spock.lang.Specification
+import spock.lang.Unroll
 
-class TestMyBusinessFunctions extends Specification{
+class TestMyBusinessFunctions extends Specification {
 
 
     BusinessObject businessObject
 
-    def setup(){
+    def setup() {
         businessObject = new BusinessObject();
     }
 
-    def "Check some business method"(){
+    def "Check some business method"() {
         expect:
-        businessObject.businessMetod(2,3) == 5
+        businessObject.businessMethod(2, 3) == 5
     }
 
-    def "Broken test output representation"(){
+    @Unroll("inputs: #first and #second and result #result")
+    //@Unroll made each iteration through the parametrized data separate to the outside world
+    def "Let's use some parameterization"() {
         expect:
-        businessObject.businessMetod(2,3) == 10
+        businessObject.businessMethod(first, second) == result
+        where:
+        first | second | result
+        1     | 2      | 3
+        4     | 5      | 9
+
+    }
+
+    def "Broken test output representation"() {
+        expect:
+        businessObject.businessMethod(2, 3) == 10
     }
 
 
-    def "Dummy empty test"(){
+    def "Dummy empty test"() {
         given:
         when:
         expect:
         true;
     }
-
 
 
 }
