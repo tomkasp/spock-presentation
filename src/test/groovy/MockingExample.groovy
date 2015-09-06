@@ -1,6 +1,6 @@
 import spock.lang.Specification
 
-class Mocking extends Specification {
+class MockingExample extends Specification {
 
     BusinessObject businessObject
 
@@ -16,7 +16,5 @@ class Mocking extends Specification {
         1 * businessObject.processPayment(1,2)
         0 * businessObject.processPayment(_,_)
     }
-
-
 
 }
