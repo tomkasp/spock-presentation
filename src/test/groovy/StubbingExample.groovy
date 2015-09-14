@@ -20,6 +20,7 @@ class StubbingExample extends Specification {
         where: "data driven is"
         first | second | result
         7 | 7 | 5
+        5 | 6 | 11
 
     }
 

@@ -10,13 +10,13 @@ class BlockExamples extends Specification {
     def " When and Then example"() {
         BusinessObject businessObject = new BusinessObject()
         //when and then always occur together
-        when:
+        when: "we invoke some me"
         int a = businessObject.businessMethod(2, 2)
         then:
         //conditions
         //exceptions
         //interactions (mocks cardinality)
-        a == 4
+        a == 5
         thrown(NullPointerException.class)
     }
 
@@ -27,17 +27,17 @@ class BlockExamples extends Specification {
 
     def "you can combined everything together"() {
 
-        given:
+        given: "sdf"
         List a = new ArrayList();
 
-        when:
+        when: "sdf"
         a.add(1)
         a.add(2)
 
-        then:
+        then: "sdf"
         a.size() == 2;
 
-        expect:
+        expect: "sdf"
         a.get(0) + a.get(1) == 3
     }
 
@@ -48,5 +48,7 @@ class BlockExamples extends Specification {
         where:
         a | b | result
         1 | 2 | 3
+        3 | 3 | 6
+        3 | 2 | 6
     }
 }

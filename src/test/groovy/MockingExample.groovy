@@ -9,6 +9,7 @@ class MockingExample extends Specification {
     }
 
     def "test behaviour"(){
+
         when: "process payment"
         businessObject.processPayment(1,2)
 

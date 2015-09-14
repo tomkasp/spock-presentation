@@ -22,9 +22,8 @@ class TestMyBusinessFunctions extends Specification {
         businessObject.businessMethod(first, second) == result
         where:
         first | second | result
-        1     | 2      | 3
+        1     | 2      | 10
         4     | 5      | 9
-
     }
 
     def "Broken test output representation"() {
